@@ -1,5 +1,12 @@
 :root {
   --header-height: 100px;
+
+  --background-color: #ffffff;
+  --text-color: #333344;
+  --accent-color: #add8e6;
+  --content-color: #f5f5f5;
+  --menu-color: #c6c6ff;
+  --blur-color: #ffffff99;
 }
 
 html {
@@ -7,13 +14,8 @@ html {
 }
 
 .app {
-  background-color: #ffffff;
-  color: #333344;
-}
-
-.app.dark {
-  background-color: #232323;
-  color: #f5f5f5;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .header {
@@ -22,11 +24,7 @@ html {
   width: 100%;
   height: var(--header-height);
 
-  background-color: #add8e6;
-}
-
-.dark .header {
-  background-color: #0f475a;
+  background-color: var(--accent-color);
 }
 
 .content {
@@ -42,15 +40,11 @@ html {
   width: 460px;
   min-height: 500px;
 
-  background-color: #f5f5f5;
+  background-color: var(--content-color);
   border-radius: 10px;
 
   text-align: justify;
   text-justify: auto;
-}
-
-.dark .article {
-  background-color: #606060;
 }
 
 .article > p {
@@ -66,11 +60,8 @@ html {
   width: 300px;
   height: 100vh;
 
-  background-color: #c6c6ff;
-}
-
-.dark .menu {
-  background-color: #311874;
+  color: var(--text-color);
+  background-color: var(--menu-color);
 }
 
 .hidden {
@@ -86,11 +77,29 @@ html {
   width: 100vw;
   height: 100vh;
 
-  background-color: #ffffff99;
+  background-color: var(--blur-color);
   backdrop-filter: blur(2px);
   cursor: pointer;
 }
 
-.dark .menu-back {
-  background-color: #00000099;
+.dark {
+  color-scheme: dark;
+  --background-color: #232323;
+  --text-color: #f5f5f5;
+  --accent-color: #0f475a;
+  --content-color: #606060;
+  --menu-color: #311874;
+  --blur-color: #00000099;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background-color: #232323;
+    --text-color: #f5f5f5;
+    --accent-color: #0f475a;
+    --content-color: #606060;
+    --menu-color: #311874;
+    --blur-color: #00000099;
+  }
 }

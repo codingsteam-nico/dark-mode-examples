@@ -7,10 +7,11 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className={classNames(styles.app, styles.dark)}>
+    <div className={classNames(styles.app)}>
       <div className={styles.header} onClick={() => setMenuOpen(true)}></div>
       <div className={styles.content}>
         <article className={styles.article}>
+          <button>hello</button>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas varius euismod nulla.
             Suspendisse eget ex at nulla malesuada vulputate vitae sed lacus. Duis non enim tortor.
@@ -61,6 +62,12 @@ function App() {
         </article>
       </div>
       <div className={classNames(styles.menu, !menuOpen && styles.hidden)}>
+        <ul>
+          <li>Option 1</li>
+          <li>Option 2</li>
+          <li>Option 3</li>
+          <li>Option 4</li>
+        </ul>
         <div className={styles.menuBack} onClick={() => setMenuOpen(false)}></div>
       </div>
     </div>
