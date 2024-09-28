@@ -7,7 +7,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
+    <div className={classNames(styles.app, styles.dark)}>
       <div className={styles.header} onClick={() => setMenuOpen(true)}></div>
       <div className={styles.content}>
         <article className={styles.article}>
@@ -63,7 +63,7 @@ function App() {
       <div className={classNames(styles.menu, !menuOpen && styles.hidden)}>
         <div className={styles.menuBack} onClick={() => setMenuOpen(false)}></div>
       </div>
-    </>
+    </div>
   );
 }
 
